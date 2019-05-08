@@ -106,8 +106,6 @@ public class ListItemAdapter extends BaseAdapter {
                 ShoppingList.saveArray(getList_items_days(),getSavedays());
             }
         });
-
-
         String name = getList_items().get(position);
         String day = getList_items_days().get(position);
         nameTextView.setText(name);
