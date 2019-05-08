@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MealAdder"></activity>
+        <activity android:name=".RecipeBook"></activity>
+        <activity android:name=".MealAdder" />
         <activity
             android:name=".ShoppingList"
             android:label="My Shopping List" />
