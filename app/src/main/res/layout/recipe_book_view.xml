@@ -8,7 +8,7 @@
     android:background="#F8ECC2">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/recipeText"
         android:layout_width="261dp"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"

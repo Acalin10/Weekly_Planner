@@ -66,10 +66,8 @@ public class MainScreen extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.main_nav);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         planner=findViewById(R.id.planner);
-        allRecipiesFile = new File(getApplicationContext().getFilesDir(),"allRecipies.txt");
         currentMeals = new File(getApplicationContext().getFilesDir(),"currentMeals");
-        allRecipiesString = ShoppingList.loadArray(allRecipiesFile);
-        allRecipiesString = initialise(allRecipiesString);
+
          mealsInUse=ShoppingList.loadArray(currentMeals);
         mealsInUse_Recipe = initialise(mealsInUse_Recipe);
         newMeals = (ArrayList<String>)getIntent().getStringArrayListExtra("usedMeals");
@@ -81,9 +79,10 @@ public class MainScreen extends AppCompatActivity {
         for(int j=0; j<mealsInUse.size(); j++){
             mealsInUse_Recipe.add(Recipe.toRecipe(mealsInUse.get(j)));
         }
+        allRecipiesString = initialise(allRecipiesString);
         allRecipiesString.addAll(newMeals);
+
         Log.i(String.valueOf(allRecipiesString),"recipies saved before sending from main");
-        ShoppingList.saveArray(allRecipiesString,allRecipiesFile);
         //checkForMeals = bundle.getStringArrayList("usedMeals");
        selectedDays = initialise(selectedDays);
         for(int i=0;i<mealsInUse_Recipe.size();i++){
