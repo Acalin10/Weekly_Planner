@@ -8,6 +8,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -28,6 +29,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 
 public class ShoppingList extends AppCompatActivity {
@@ -106,6 +109,25 @@ public class ShoppingList extends AppCompatActivity {
         shop_list.setAdapter(itemAdapter);
         shop_list.setOnItemClickListener(new OnItemClickCrossListener());
    }
+
+
+   public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.list_top_navigation, menu);
+        return true;
+   }
+
+   @Override
+   public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.btnSort:
+                Collections.sort(list_items, String.CASE_INSENSITIVE_ORDER);
+                shop_list.setAdapter(new ListItemAdapter(this,list_items,list_items_days,shopping_list,shopping_list_days));
+        }
+        return false;
+   }
+
 
     public static void saveArray(ArrayList<String> arrayList, File file){
         try {
