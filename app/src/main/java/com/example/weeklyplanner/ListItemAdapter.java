@@ -21,6 +21,8 @@ public class ListItemAdapter extends BaseAdapter {
     private ArrayList<String> list_items_days;
     private File saveshop;
     private File savedays;
+    ArrayList<String> list_ingredients;
+    File save_ingredients;
 
     public void setList_items(ArrayList<String> list_items) {
         this.list_items = list_items;
@@ -71,7 +73,6 @@ public class ListItemAdapter extends BaseAdapter {
         setmInflater((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE));
         setSavedays(shopping_list_days);
         setSaveshop(shopping_list);
-
     }
     @Override
 
@@ -101,6 +102,7 @@ public class ListItemAdapter extends BaseAdapter {
             public void onClick(View view) {
                 getList_items().remove(position);
                 getList_items_days().remove(position);
+
                 notifyDataSetChanged();
                 ShoppingList.saveArray(getList_items(),getSaveshop());
                 ShoppingList.saveArray(getList_items_days(),getSavedays());

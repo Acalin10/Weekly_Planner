@@ -36,6 +36,10 @@ public class ShoppingList extends AppCompatActivity {
     ArrayList<String> list_items_days;
     File shopping_list;
     File shopping_list_days;
+    File shopping_list_with_ingredients;
+    ArrayList<String> list_items_with_ingredients;
+    ArrayList<String> list_final;
+    File shopping_list_final;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
@@ -60,6 +64,7 @@ public class ShoppingList extends AppCompatActivity {
                                 public void onClick(DialogInterface dialog, int which) {
                                     list_items.add(preferedCase(input.getText().toString()));
                                     list_items_days.add("Extra");
+                                    ArrayList<String> strings = new ArrayList<>();
                                     saveArray(list_items,shopping_list);
                                     saveArray(list_items_days,shopping_list_days);
                                     dialog.dismiss();
@@ -87,6 +92,12 @@ public class ShoppingList extends AppCompatActivity {
         shopping_list_days  = new File(getApplicationContext().getFilesDir(),"CurrentListDays.txt");
         list_items = loadArray(shopping_list);
         list_items_days = loadArray(shopping_list_days);
+       // shopping_list_with_ingredients = new File(getApplicationContext().getFilesDir(),"IngredientsForChosenDays.txt");
+       // list_items_with_ingredients = loadArray(shopping_list_with_ingredients);
+        int listLenght=list_items.size();
+        for(int i =0;i<listLenght;i++){
+            list_items_days.add("Day");
+        }
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.List_Nav);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);

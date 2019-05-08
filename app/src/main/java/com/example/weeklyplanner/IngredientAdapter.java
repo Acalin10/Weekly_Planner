@@ -16,9 +16,8 @@ public class IngredientAdapter extends BaseAdapter {
     ArrayList<String> ingredientsForDay;
     File ingredientsForDay_list;
     LayoutInflater mInflater;
-    IngredientAdapter(Context context, ArrayList<String> ingredientsForDay, File ingredientsForDay_list){
+    IngredientAdapter(Context context, ArrayList<String> ingredientsForDay){
         this.ingredientsForDay=ingredientsForDay;
-        this.ingredientsForDay_list=ingredientsForDay_list;
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
     @Override

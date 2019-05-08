@@ -19,37 +19,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/main_addMeal"
-        android:layout_width="64dp"
-        android:layout_height="59dp"
-
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="28dp"
-        android:layout_toEndOf="@+id/date"
-        android:layout_toRightOf="@+id/date"
-        android:background="#00FFC107"
-        app:layout_constraintStart_toEndOf="@+id/date"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_add_black_24dp" />
-
     <ImageView
         android:id="@+id/main_meals"
-        android:layout_width="94dp"
-        android:layout_height="72dp"
+        android:layout_width="137dp"
+        android:layout_height="95dp"
 
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginStart="91dp"
+        android:layout_marginLeft="91dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginRight="136dp"
         android:layout_toEndOf="@+id/date"
         android:layout_toRightOf="@+id/date"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toEndOf="@+id/main_addMeal"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars[1]" />
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toEndOf="@+id/date"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
